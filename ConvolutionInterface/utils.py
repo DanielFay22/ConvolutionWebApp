@@ -1,4 +1,5 @@
 
+j = 1.0j
 
 def u(t):
     return 1 if t >= 0 else 0

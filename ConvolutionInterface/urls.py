@@ -20,5 +20,6 @@ from ConvolutionInterface import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('convolve/', views.convolve_path, name='convolve'),
-    path('', views.convolve_path)
+    path('', views.index_path),
+    path('fourier/', views.fourier_series_path, name='fourier')
 ]

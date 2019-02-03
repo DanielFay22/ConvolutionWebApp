@@ -1,6 +1,6 @@
 from django import forms
 
-class FunctionForm(forms.Form):
+class ConvolutionForm(forms.Form):
     func1 = forms.CharField(label="Function 1")
     func2 = forms.CharField(label="Function 2")
 
@@ -35,3 +35,43 @@ class FunctionForm(forms.Form):
         label="Show Function 2",
         required=False
     )
+
+
+class FourierForm(forms.Form):
+
+    c_k = forms.CharField(label="C_k")
+
+    series_len = forms.IntegerField(label="Number of terms")
+
+    lower_bound = forms.DecimalField(label="X Lower Bound")
+
+    upper_bound = forms.DecimalField(label="X Upper Bound")
+
+    points = forms.IntegerField(label="Number of Points")
+
+    fundamental = forms.DecimalField(label="Fundamental Frequency")
+
+    method = forms.ChoiceField(
+        widget=forms.RadioSelect(),
+        choices=[("all", "All K"),("even", "Only Even K"), ("odd", "Only Odd K")],
+        label="Include Terms"
+    )
+
+    sweep_k = forms.BooleanField(
+        label="Sweep k",
+        required=False
+    )
+
+    k_start = forms.IntegerField(required=False)
+    k_end = forms.IntegerField(required=False)
+    k_step = forms.IntegerField(required=False)
+
+
+    custom_sweep = forms.BooleanField(
+        label="Custom Sweep",
+        required=False
+    )
+
+    k_terms = forms.CharField(label="Comma-Separated K Values", required=False)
+
+
