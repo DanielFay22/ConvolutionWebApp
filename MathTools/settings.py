@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'ConvolutionInterface.urls'
+ROOT_URLCONF = 'MathTools.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'ConvolutionInterface.wsgi.application'
+WSGI_APPLICATION = 'MathTools.wsgi.application'
 
 
 # Database
